@@ -1,0 +1,90 @@
+<html>
+	<head>
+		<title>首页-灵魂什一税 Trade Game</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css" /> -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+		<div id="allBlackWrapper">
+            <div id="dialog-container" style="width:80%"></div>
+            <button id="continueButton" href="./background.html">点击这里</button>
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+        <script>
+            // 句子数组，每句话将会逐个打印
+            const sentences = [
+                "？？？：你一直在纠结相似的问题。你质问自我，质问他人，质问世界。",
+                "？？？：时至今日，你也坚持这些问题有存在的意义。",
+                "？？？：可它们已经没有任何意义了。",
+                "？？？：因为你已经死去。",
+                "？？？：你瞧，你的身体已不在此处。只剩下灵魂被困在这里，不断徘徊。",
+                "？？？：它会在黑暗中不断腐烂，最后变成一条空空的塑料袋。那是真正的死亡。",
+                "？？？：唉，多么令人伤心的结局！我们都喜欢喜剧，讨厌悲剧，是不是？",
+                "？？？：所以，我仍然为你留了一条生路。",
+                "？？？：就用你从前最得意的商业天赋……用交易挣来金币，赎回你的灵魂！",
+                "？？？：你听，天平已经被晃响。看来你的客人已经把筹码放上了托盘。",
+                "？？？：现在，轮到你了。"
+            ];
+
+    
+            let sentenceIndex = 0;  // 当前打印到哪一句
+            let charIndex = 0;      // 当前打印到某一句的第几个字符
+            const typingSpeed = 150; // 打字速度（每个字符间的时间间隔，单位毫秒）
+    
+            function typeSentence() {
+                const currentSentence = sentences[sentenceIndex]; // 获取当前的句子
+                const textContainer = document.getElementById('dialog-container');
+    
+                if (charIndex < currentSentence.length) {
+                    // 每次显示下一个字符
+                    textContainer.innerHTML += currentSentence.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeSentence, typingSpeed); // 递归调用，逐个显示字符
+                } else {
+                    // 当当前句子显示完后，换行并显示下一句
+                    sentenceIndex++;
+                    if (sentenceIndex < sentences.length) {
+                        charIndex = 0;
+                        textContainer.innerHTML += '<br>'; // 添加换行符
+                        if (sentenceIndex === sentences.length - 2) {
+                            setTimeout(typeSentence, 3000); // 延迟5秒再打印最后两句
+                        } else {
+                            setTimeout(typeSentence, typingSpeed); // 延迟开始下一句
+                        }
+                    }else{
+                        showButton()
+                    }
+                }
+            }
+
+            // 开始打字效果
+            setTimeout(typeSentence, typingSpeed); 
+
+            function showButton() {
+                const button = document.getElementById('continueButton');
+                button.classList.add('fade-in'); // 添加 'fade-in' class 以触发渐入效果
+                button.addEventListener('click', function() {
+                    // 点击按钮后跳转到另一个页面
+                    window.location.href = './background.html'; // 这里替换为目标页面的URL
+                });
+            }
+            
+        </script>
+
+	</body>
+</html>

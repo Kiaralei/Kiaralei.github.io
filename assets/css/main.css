@@ -181,7 +181,8 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		/* font-family: "Source Sans Pro", Helvetica, sans-serif; */
+		font-family: "Microsoft Yahei";
 		font-weight: 900;
 		line-height: 1.5;
 		letter-spacing: 0.075em;
@@ -3215,6 +3216,117 @@ input, select, textarea {
 
 	.pagination span {
 		color: #eeeeee;
+	}
+
+	/**allBlackWrapper */
+	#allBlackWrapper{
+		background-color: black;
+		overflow: scroll;
+		color: white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family:"Microsoft Yahei" !important;
+		min-height: 100vh;
+	}
+
+	.allBlackWrapper_intro {
+		color: #ffffff;
+		padding: 8rem 4rem 6rem 4rem ;
+		-moz-align-items: center;
+		-webkit-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-moz-justify-content: -moz-center;
+		-webkit-justify-content: -webkit-center;
+		-ms-justify-content: -ms-center;
+		justify-content: center;
+		-moz-transition: opacity 1s ease, -moz-transform 1s ease;
+		-webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
+		-ms-transition: opacity 1s ease, -ms-transform 1s ease;
+		transition: opacity 1s ease, transform 1s ease;
+		position: relative;
+		cursor: default;
+		text-align: center;
+		z-index: 1;
+		
+	}
+
+	#allBlackWrapper_continue{
+		padding-top:20px
+	}
+
+	.allBlackWrapper_question {
+		color: #ffffff;
+		padding: 8rem 4rem 6rem 4rem ;
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	
+		transition: opacity 1s ease, transform 1s ease;
+		position: relative;
+		cursor: default;
+		text-align: center;
+		z-index: 1;
+		min-height: 100vh;
+	}
+
+	.allBlackWrapper_options{
+		display: block;
+		font-size: 16px;
+	}
+
+	.allBlackWrapper_options p:first-child{
+		margin-top:30px
+	}
+
+	.allBlackWrapper_options a{
+		text-decoration: none; 
+		color: inherit;
+		transition: transform 0.3s ease, background-color 0.3s ease; /* 平滑过渡 */
+        cursor: pointer; /* 鼠标悬停时显示手型 */
+	}
+
+	.allBlackWrapper_fade_in {
+        animation: allBlackWrapperFadeIn ease-in 0.5s;
+
+	}
+	@keyframes allBlackWrapperFadeIn {
+		0% { opacity: 0; }
+		100% { opacity: 1; }
+	}
+
+	#dialog-container {
+		font-size: 24px;
+		/* font-family: 'Courier', monospace; */
+		line-height: 1.5;
+		white-space: pre-wrap;
+	}
+
+	#continueButton {
+		opacity: 0; /* 初始透明 */
+		position: fixed;
+		right: 100px;
+		bottom: 100px;
+		color:white !important;
+		margin-top: 20px;
+		padding: 10px 20px;
+		font-size: 18px;
+		transition: opacity 2s ease; /* 透明度渐变过渡效果 */
+	}
+
+	/* 当按钮显示时，增加 class 'fade-in' */
+	#continueButton.fade-in {
+		opacity: 1; /* 变为不透明 */
 	}
 
 /* Wrapper */
