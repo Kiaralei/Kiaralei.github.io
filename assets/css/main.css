@@ -7,6 +7,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -180,9 +181,12 @@ input, select, textarea {
 		margin: 0 0 2rem 0;
 	}
 
+
+
 	h1, h2, h3, h4, h5, h6 {
 		/* font-family: "Source Sans Pro", Helvetica, sans-serif; */
-		font-family: "Microsoft Yahei";
+		/* font-family: "Microsoft Yahei"; */
+		/* font-family:"ZCOOLXiaoWei", serif !important; */
 		font-weight: 900;
 		line-height: 1.5;
 		letter-spacing: 0.075em;
@@ -3219,6 +3223,9 @@ input, select, textarea {
 	}
 
 	/**allBlackWrapper */
+
+
+
 	#allBlackWrapper{
 		background-color: black;
 		overflow: scroll;
@@ -3226,7 +3233,9 @@ input, select, textarea {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		font-family:"Microsoft Yahei" !important;
+		/* font-family:"Microsoft Yahei" !important; */
+		/* font-family:"ZCOOL XiaoWei", serif !important; */
+		font-family:"ZCOOLXiaoWei", serif !important;
 		min-height: 100vh;
 	}
 
@@ -3282,7 +3291,7 @@ input, select, textarea {
 
 	.allBlackWrapper_options{
 		display: block;
-		font-size: 16px;
+		font-size: 24px;
 	}
 
 	.allBlackWrapper_options p:first-child{
